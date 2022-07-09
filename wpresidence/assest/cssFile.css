@@ -1,13 +1,4 @@
         @font-face {
-        font-family: 'iransans';
-        src: url('../font/IRANSansWeb.eot');    /* IE9 Compat Modes */
-        src:    url('../font/IRANSansWeb.woff2') format('woff2'),    /* Super Modern Browsers */
-                url('../font/IRANSansWeb.woff') format('woff'),    /* Pretty Modern Browsers */
-                url('../font/IRANSansWeb.ttf')  format('truetype'),    /* Safari, Android, iOS */
-        }
-
-
-        @font-face {
             font-family: "FaNum";
             src: url('../font/FaNum.ttf');
         }
@@ -22,8 +13,8 @@
   
         
         body {
-            font-family: IRANSans;
-            font-size: 16px;
+            font-family: IRANSans !important;
+            font-size: 15px;
             
         }
         
@@ -379,6 +370,9 @@
         .height-300{
             height: 300px;
         }
+        .height-350{
+            height: 350;
+        }
         .height-400{
             height: 400px;
         }
@@ -431,6 +425,10 @@
             width: 100%;
         }
 
+        .border-gray{
+            border-color: #21252949; 
+        }
+
         .square-fab{
             border-color: #21252930; 
             width:30px;
@@ -443,6 +441,10 @@
 
         .bg_lightblue{
             background-color:rgba(203, 236, 247, 0.226)
+        }
+
+        .text-shadow{
+            text-shadow: 2px 2px 5px blue;
         }
 
         .long_text{
@@ -479,6 +481,10 @@
 
         .rtl{
             direction:rtl;
+        }
+
+        .cursor-pointer{
+            cursor: pointer;
         }
 
         .card-2_size{
