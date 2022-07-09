@@ -1,0 +1,3446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+    <link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+rel="stylesheet"
+/>
+    <style>
+
+        .button_fill{
+            position: relative;
+            color: white;
+            border-radius: 4px;
+            text-transform: uppercase;
+            outline: 0;
+            overflow:hidden;
+            background: none;
+            z-index: 1;
+            cursor: pointer;
+            transition:         0.08s ease-in;
+            -o-transition:      0.08s ease-in;
+            -ms-transition:     0.08s ease-in;
+            -moz-transition:    0.08s ease-in;
+            -webkit-transition: 0.18s ease-in;
+          }
+
+        .fill:hover {
+            color: #1546cf;
+          }
+          
+          .fill:before {
+            content: "";
+            position: absolute;
+            background: white;
+            bottom: 0;
+            left: 0;
+            right: 100%;
+            top: 0;
+            z-index: -1;
+            -webkit-transition:right 0.2s ease-in;
+            transition:right 0.2s ease-in;
+            
+          }
+          
+          .fill:hover:before {
+            right: 0;
+          }
+          
+
+
+
+
+
+
+
+
+
+
+        .white {
+            color: white;
+        }
+
+        #navbar2 {
+            position: relative;
+        }
+
+        #navbarNav {
+            position: absolute;
+            left: 40%;
+            margin-left: -50px !important;
+            /* 50% of your logo width */
+            display: block;
+        }
+
+        #user_contact {
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+
+        .container_main {
+            background-image: url(images/bg4.png);
+            background-size: cover;
+            height: 700px;
+
+        }
+
+        .center {
+            width: 800px;
+            height: 150px;
+            /* border: 3px solid green; */
+            position: relative;
+            top: 32%;
+            left: 28%;
+            -ms-transform: translate(50%, 50%);
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: white;
+        }
+
+        .sticky-top.scrolled {
+            background-color: black !important;
+            transition: background-color 200ms linear;
+            opacity: 0.5;
+
+        }
+
+        .Nav_tabs {
+            position: relative;
+
+            left: 20;
+            -ms-transform: translate(50%, 50%);
+            transform: translate(0, -80%);
+
+
+        }
+
+        /*.sticky-top.scrolled .navbar-brand{
+            
+            background-size: cover;
+            background-image: url('images/logo.png');
+        } 
+
+        .sticky-top.scrolled #navbarNav {
+            color: black !important;
+        }*/
+
+
+        /* style of nav-tab*/
+        #nav-tabs {
+            height: 150 !important;
+        }
+
+        .form-label {
+            margin: 0px !important;
+        }
+
+        .form-control {
+            padding: 0.25rem 0.5rem !important;
+            font-size: .875rem !important;
+        }
+
+        .nav-tabs {
+            border-bottom: none !important;
+        }
+
+        .tab-content {
+            border-radius: 5px !important;
+            box-shadow: 0px 2px 30px lightblue !important;
+            padding: 26px !important;
+        }
+
+
+        .nav-link {
+            margin: 1px !important;
+        }
+
+        .nav-link.active {
+            color: black !important;
+            background-color: white !important;
+        }
+
+        /*End style of nav-tab*/
+
+        /* style of check_button*/
+
+
+        .btn-check:checked+.btn-light,
+        .btn-light.active,
+        .btn-light:active,
+        .show>.btn-light.dropdown-toggle {
+            color: rgb(255, 255, 255);
+            background-color: #0a58ca;
+            /* border-color: #0a53be; */
+        }
+
+        /*End style of check_button*/
+
+        .nav-project.active {
+            background: transparent !important;
+            color: orange !important;
+            border-bottom: 2px solid orange !important;
+            border-radius: 0px !important;
+            
+        }
+
+        .nav-project{
+            color: black;
+        }
+
+
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+     
+       /* footer style for parallaxing*/
+
+       body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+      section {
+        width: 100vw;
+        height: 100vh;
+        background-color: lightgrey;
+      }
+      
+      section.description {
+        background-color: white;
+      }
+      
+      footer {
+        height: 75vh;
+        width: 100vw;
+        background-color: #222;
+        overflow: hidden;
+      }
+      
+      section.footer-container {
+        height: 75vh;
+        color: #f0f0f0;
+        background-color: #222;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      } 
+      
+      .footer-row {
+        height: 33.3%;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .footer-row.center {
+        background-color: #262626;
+        justify-content: space-around;
+      }
+      
+      .logo {
+        width: 400px;
+        height: 80px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      
+      .items {
+        width: 50vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      
+      .item {
+        width: 80px;
+        height: 80px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      
+      .circles {
+        width: 50vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      
+      .circle {
+        width: 100px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+      }
+      
+      
+      .foot {
+        height: 20px;
+        width: 80vw;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+
+
+    </style>
+</head>
+
+<body style="height:5000px ;">
+    <div class="container_main">
+        <nav class="navbar navbar-expand-lg  py-0 border-bottom">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse px-3 " id="navbarNav1">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-facebook-f px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-twitter px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-facebook-f px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-youtube px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-vimeo-v px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-instagram px-2 white"></i></a>
+                        </li>
+                        <li class="nav-item border border-top-0 border-light">
+                            <a class="nav-link" href="#"><i class="fab fa-foursquare px-2 white"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="navbar-collapse collapse  w-100 px-3" id="collapsingNavbar">
+                <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap ms-auto">
+                    <li class="nav-item border border-top-0 border-light px-3">
+                        <a class="nav-link white" href="#"><i class="fas fa-heart me-1 white"></i>Favorites</a>
+
+                    </li>
+                    <li class="nav-item border border-top-0 border-light px-3">
+                        <a class="nav-link white" href="#"=><i
+                                class="far fa-envelope me-1 white"></i>contact@mail.com</a>
+                    </li>
+                    <li class="nav-item border border-top-0 border-light px-3">
+                        <a class="nav-link white" href="#"><i class="fab fa-whatsapp me-1 white"></i>+98
+                            922
+                            496 1543</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid sticky-top" id="user-contact">
+
+            <div class="row ">
+                <div class="col-sm-9">
+                    <div class="ps-5 py-0">
+                        <nav class="navbar navbar-expand-sm " id="navbar2">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#"><img src="images/brand.png" alt=""></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse " id="navbarNav">
+                                    <ul class="navbar-nav justify-content-md-center justify-content-start">
+                                        <li class="nav-item active px-2">
+                                            <a class="nav-link white" href="#">Home <span
+                                                    class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item px-2">
+                                            <a class="nav-link white" href="#">Demos</a>
+                                        </li>
+                                        <li class="nav-item px-2">
+                                            <a class="nav-link white" href="#">Lists</a>
+                                        </li>
+                                        <li class="nav-item px-2">
+                                            <a class="nav-link white" href="#">Property</a>
+                                        </li>
+                                        <li class="nav-item px-2">
+                                            <a class="nav-link white" href="#">Pages</a>
+                                        </li>
+                                        <li class="nav-item px-2  white">
+                                            <a class="nav-link white" href="#">Elementor</a>
+                                        </li>
+                                        <li class="nav-item px-2">
+                                            <a class="nav-link white" href="#">Search</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-sm-3  ">
+                    <div class="row p-0 " align="center">
+                        <div class="col-sm-5 px-0 mt-4 pt-1 ">
+                            <a class="nav-link p-0 white" href="#" style=" font-size:13px"><i
+                                    class="fa-solid fa-phone fa-lg pe-2 white"></i>922-496-1543</a>
+                        </div>
+                        <div class="col-sm-2 px-0 mt-4 pt-1">
+                            <a class="nav-link p-0" href="#"><i class="fa-solid fa-circle-user fa-lg white"
+                                    style='width:20px; height:20px'></i></a>
+
+                        </div>
+                        <div class="col-sm-5 px-0 mt-3 pt-2 ">
+                            <button class="btn bg-primary text-light" style="font-size:13px">Add Listing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- center div -->
+        <div class="container center">
+            <h1 style="text-align:center ;"> Find Your Dream Home</h1>
+            <p style="text-align:center ; margin-top:15px">We are recognized for exceeding client expectations and
+                delivering great results through
+                dedication, ease of process, and extraordinary services to our worldwide clients.</p>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="container Nav_tabs">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs  justify-content-center padding-0" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active  text-white" style="background-color:blue " id="home-tab"
+                    data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                    aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link  text-white darkblue"  id="profile-tab" data-bs-toggle="tab"
+                    data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                    aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link  text-white" style="background-color:blue" id="messages-tab"
+                    data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages"
+                    aria-selected="false">Messages</button>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" style="background-color: #fff;">
+            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row mb-3 ">
+                    <div class="col-sm ">
+                        Categories
+                        <div class="dropdown">
+
+                            <button type="button" class="btn btn-white text-dark border dropdown-toggle w-100 btn-sm"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                Dropdown button
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        Category</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Apartments</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Condos</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Houses</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Industrial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm ">
+                        City
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-white text-dark border dropdown-toggle btn-sm w-100"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                City
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        City</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Jercey City</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Newyork City</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm ">
+                        Area
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle btn-sm w-100 btn-white text-dark border"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                Property
+                                Category
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        Area</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Bayonne
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Greenville
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)"> Manhattan
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Queens</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm  ">
+
+                        <div class="dropdown p-0 m-0">
+                            Rooms
+                            <button type="button"
+                                class="  btn btn-white text-dark border dropdown-toggle btn-sm w-100  "
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                Rooms
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active " href="#" onclick="item_clicked(this)">Rooms
+                                        Number</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">1</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">2</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">3</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <button class="btn btn-primary w-100 btn-sm mt-4" style="color: white;"><i
+                                class="fa-solid fa-magnifying-glass me-3"></i>Search</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row mb-3 d-flex align-items-center">
+                    <div class="col-3 ">
+                        Categories
+                        <div class="dropdown">
+
+                            <button type="button" class="btn btn-white text-dark border dropdown-toggle w-100 btn-sm"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                Dropdown button
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        Category</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Apartments</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Condos</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Houses</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Industrial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-3 ">
+                        City
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-white text-dark border dropdown-toggle btn-sm w-100"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                City
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        City</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Jercey City</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Newyork City</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-3">
+                        <label for="customRange1" class="form-label">Price range: $ <span id="start_range"> 0</span> to
+                            $<span id="end_range"> 9,000,000</span></label>
+                        <input min="0" max="9000000" type="range" class="form-range pt-4" id="customRange1">
+                    </div>
+
+
+                    <div class="col-3">
+                        <button class="btn btn-primary w-100 btn-sm mt-4" style="color: white;"><i
+                                class="fa-solid fa-magnifying-glass me-3"></i>Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                <div class="row mb-3">
+                    <div class="col-sm  ">
+                        Categories
+                        <div class="dropdown">
+
+                            <button type="button" class="btn btn-white text-dark border dropdown-toggle w-100 btn-sm"
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                Property Category
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active" href="#" onclick="item_clicked(this)">Property
+                                        Category</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Apartments</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Condos</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Houses</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Industrial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm  ">
+                        <label class="form-label" for="Min_size">Min size</label>
+
+                        <input class="form-control" id="Min_size" placeholder="Property Size" name="Min_size"
+                            type="text">
+
+                    </div>
+
+                    <div class="col-sm  ">
+                        <label class="form-label" for="Min_lot_size">Min Lot size</label>
+
+                        <input class="form-control" id="Min_lot_size" placeholder="Property Lot Size"
+                            name="Min_lot_size" type="text">
+
+                    </div>
+
+                    <div class="col-sm ">
+
+                        <div class="dropdown p-0 m-0">
+                            Status
+                            <button type="button"
+                                class="  btn btn-white text-dark border dropdown-toggle btn-sm w-100  "
+                                id="dropdownMenu1" data-bs-toggle="dropdown">
+                                property status
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item active " href="#" onclick="item_clicked(this)">property
+                                        status</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                    </hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">active(7)</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Hot Offer(5)</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">New Offer(5)</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="item_clicked(this)">Open House(2)</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm ">
+                        <button class="btn btn-primary w-100 btn-sm mt-4" style="color: white;"><i
+                                class="fa-solid fa-magnifying-glass me-3"></i>Search</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container " style=" width: 600px;
+    height: 150px;">
+        <h2 class="fw-bolder" style="text-align:center ;"> Our listings portfolio</h2>
+        <p style="text-align:center ; margin-top:15px">These are the latest properties in the Sales category. You can
+            create the list using the “latest listing shortcode” and show items by specific categories.
+        </p>
+
+    </div>
+
+    <div id="check_button" class="text-center">
+        <input type="checkbox" class="btn-check " id="btn-check" autocomplete="off" />
+        <label class="btn btn-light py-0 me-4 rounded-0" for="btn-check">Rentals</label>
+
+        <input type="checkbox" class="btn-check" id="btn-check2" checked autocomplete="off" />
+        <label class="btn btn-light py-0 me-4 rounded-0" for="btn-check2">Sales</label>
+
+        <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off" />
+        <label class="btn btn-light py-0 rounded-0" for="btn-check3">Invest</label>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-3 d-flex justify-content-between mx-3 ">
+
+            <div class="col hover-overlay hover-zoom ripple shadow-1-strong rounded  " data-mdb-ripple-color="light" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                <div class="card card-inverse text-center mt-4" style="max-width: 100%;">
+
+                    <!-- Image -->
+                    <div class="bg-image "    data-mdb-ripple-color="light">
+                        <img class="card-img-top " src="images/house_nice.jpg" alt="Photo of house">
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                        </a>
+                    </div>
+
+
+
+                    <!-- Text Overlay -->
+                    <div class="card-img-overlay">
+
+                        <div class="d-flex flex-column  " style="height: 200px;">
+                            <!-- top overlay -->
+                            <div class="mb-auto ">
+                                <div class="d-flex  mb-3">
+                                    <div class="me-auto"><span class="badge bg-warning ">Features</span>
+                                    </div>
+                                    <div class=" "> <span class="badge bg-primary ">Sales</span></div>
+                                    <div class="ps-2 "><span class="badge bg-danger ">New Offer</span></div>
+                                </div>
+                            </div>
+
+                            <!-- bottom overlay -->
+                            <div class="  pb-3">
+                                <div class="d-flex ">
+                                    <div class="p-2 ">
+                                        <span class="text-white float-start"><i
+                                                class="fa-solid fa-location-dot fa-sm"></i>
+                                            <a class="text-decoration-none text-white" href="#">Greenville</a> , <a
+                                                class="text-white text-decoration-none">Jersey City</a></span>
+                                    </div>
+                                    <div class="ms-auto p-2">
+                                        <span class="float-end text-white ">
+                                            <i class="fas fa-video mx-2 fa-sm"></i>
+                                            <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body fs-6">
+
+                        <h5 class="text-start">Luxury House in Greenville</h5>
+
+
+                        <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+
+                        <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                            overlooking
+                            the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+
+                        <div class="text-start ">
+                            <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                            <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                            <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                        </div>
+
+                        <hr class="text-dark opacity-20">
+
+                        <div class="d-flex ">
+                            <div class="me-auto p-2 fw-bold ">
+                                <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+                                John Collins
+                            </div>
+
+                            <div class="py-2 ps-2">
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-share-nodes"></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-plus"></i></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col hover-overlay hover-zoom ripple shadow-1-strong rounded" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                <div class="card card-inverse text-center mt-4" style="max-width: 100%;">
+
+                    <!-- Image -->
+                    <div class="bg-image "
+                        data-mdb-ripple-color="light">
+                        <img class="card-img-top " src="images/house_nice.jpg" alt="Photo of house">
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                        </a>
+                    </div>
+
+
+
+                    <!-- Text Overlay -->
+                    <div class="card-img-overlay">
+
+                        <div class="d-flex flex-column  " style="height: 200px;">
+                            <!-- top overlay -->
+                            <div class="mb-auto">
+                                <div class="d-flex  mb-3">
+                                    <div class="me-auto "><span class="badge bg-warning ">Features</span>
+                                    </div>
+                                    <div class=" "> <span class="badge bg-primary ">Sales</span></div>
+                                    <div class="ps-2 "><span class="badge bg-danger ">New Offer</span></div>
+                                </div>
+                            </div>
+
+                            <!-- bottom overlay -->
+                            <div class="  pb-3">
+                                <div class="d-flex ">
+                                    <div class="p-2 ">
+                                        <span class="text-white float-start"><i
+                                                class="fa-solid fa-location-dot fa-sm"></i>
+                                            <a class="text-decoration-none text-white" href="#">Greenville</a> , <a
+                                                class="text-white text-decoration-none">Jersey City</a></span>
+                                    </div>
+                                    <div class="ms-auto p-2 ">
+                                        <span class="float-end text-white ">
+                                            <i class="fas fa-video mx-2 fa-sm"></i>
+                                            <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body fs-6">
+
+                        <h5 class="text-start">Luxury House in Greenville</h5>
+
+
+                        <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+
+                        <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                            overlooking
+                            the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+
+                        <div class="text-start ">
+                            <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                            <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                            <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                        </div>
+
+                        <hr class="text-dark opacity-20">
+
+                        <div class="d-flex ">
+                            <div class="me-auto p-2 fw-bold ">
+                                <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+                                John Collins
+                            </div>
+
+                            <div class="py-2 ps-2">
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-share-nodes"></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-plus"></i></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col hover-overlay hover-zoom ripple shadow-1-strong rounded" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                <div class="card card-inverse text-center mt-4" style="max-width: 100%;">
+
+                    <!-- Image -->
+                    <div class="bg-image "
+                        data-mdb-ripple-color="light">
+                        <img class="card-img-top " src="images/house_nice.jpg" alt="Photo of house">
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                        </a>
+                    </div>
+
+
+
+                    <!-- Text Overlay -->
+                    <div class="card-img-overlay">
+
+                        <div class="d-flex flex-column  " style="height: 200px;">
+                            <!-- top overlay -->
+                            <div class="mb-auto ">
+                                <div class="d-flex  mb-3">
+                                    <div class="me-auto "><span class="badge bg-warning ">Features</span>
+                                    </div>
+                                    <div class=" "> <span class="badge bg-primary ">Sales</span></div>
+                                    <div class="ps-2"><span class="badge bg-danger ">New Offer</span></div>
+                                </div>
+                            </div>
+
+                            <!-- bottom overlay -->
+                            <div class="  pb-3">
+                                <div class="d-flex ">
+                                    <div class="p-2 ">
+                                        <span class="text-white float-start"><i
+                                                class="fa-solid fa-location-dot fa-sm"></i>
+                                            <a class="text-decoration-none text-white" href="#">Greenville</a> , <a
+                                                class="text-white text-decoration-none">Jersey City</a></span>
+                                    </div>
+                                    <div class="ms-auto p-2 ">
+                                        <span class="float-end text-white ">
+                                            <i class="fas fa-video mx-2 fa-sm"></i>
+                                            <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body fs-6">
+
+                        <h5 class="text-start">Luxury House in Greenville</h5>
+
+
+                        <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+
+                        <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                            overlooking
+                            the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+
+                        <div class="text-start ">
+                            <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                            <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                            <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                        </div>
+
+                        <hr class="text-dark opacity-20">
+
+                        <div class="d-flex ">
+                            <div class="me-auto p-2 fw-bold ">
+                                <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+                                John Collins
+                            </div>
+
+                            <div class="py-2 ps-2">
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-share-nodes"></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-plus"></i></i></button>
+                                <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                    style="border-color: #21252930; height:30px; width:30px"><i
+                                        class="fa-solid fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <button type="button" class="btn bg-primary  mx-auto d-block  py-3 w-25 px-0 fill button_fill"
+            style="margin-top: 50px; margin-bottom:150px; ">Load More Listings</button>
+
+
+    </div>
+
+    <div class="container-fluid" style="background-color: rgba(203, 236, 247, 0.226); height:600px">
+
+        <div class="container ">
+            <div class="row align-items-around ">
+                <div class="col-4 " style=" padding-top:150px">
+                    <h1 class="display-4 fw-bold text-start text-md-left mb-3">Browse listings by category</h1>
+                    <p style="text-align:left ; margin-top:15px" class="lh-md">Highlight the best of your properties
+                        by using the List Category shortcode. You can list categories, types, cities, areas and states.
+                    </p>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-7  " style="padding-top: 50px;  ">
+                    <div class="row">
+                        <div class="col  bg-image hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                            <div class="card bg-image text-white bg-image" style="height:450px; width:290px ">
+                                <img class="card-img " src="images/house2.jpg" height="450px" width="290" alt="house1">
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                  </a>
+                                <div class="card-img-overlay d-flex align-items-start flex-column">
+                                    <h5 class="card-title">Houses</h5>
+                                    <div class="mt-auto p-2"><span class="pe-1">7</span> Listings </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col bg-image hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                            <div class="card bg-image text-white bg-image" style="height:450px; width:290px ">
+                                <img class="card-img " src="images/house1.jpg" height="450px" width="290" alt="house1">
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                  </a>
+                                <div class="card-img-overlay d-flex align-items-start flex-column">
+                                    <h5 class="card-title">Apartments</h5>
+                                    <div class="mt-auto p-2"><span class="pe-1">15</span> Listings </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container " style=" width: 600px;
+    height: 150px; margin-top:100px">
+        <h2 class="fw-bolder" style="text-align:center ;"> Listings available for rent</h2>
+        <p style="text-align:center ; margin-top:15px">
+            These are the latest properties in the Rentals category displayed using the latest properties slider
+            shortcode. You control the number of listings.
+        </p>
+
+    </div>
+
+  <!-- carousel -->
+   
+        <section class="pt-5 pb-5 bg-white">
+          <div class="container">
+            <div class="row">
+              <div class="col-1 d-flex justify-content-center">
+                <a class="btn btn-light my-auto " href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                  <i class="fa fa-arrow-left text-primary"></i>
+                </a>
+              </div>
+              
+              <div class="col-10">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+        
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_1.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_2.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/house_nice.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+        
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+        
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_3.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_4.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_5.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+        
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+        
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_6.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_7.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                        <div class="col-md-4 mb-3 hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                          <div class="card  " style="max-width: 100%;">
+    
+                            <!-- Image -->
+                                <div 
+                                class=" bg-image "
+                                data-mdb-ripple-color="light"
+                              >
+                              <img class="card-img-top " src="images/carousel_img_2.jpg" alt="Photo of house" >
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                </a>
+                              </div>
+        
+        
+    
+                              
+                            <!-- Text Overlay -->
+    
+    
+    
+                            <div class="card-img-overlay p-0" style=" height:170px;  padding: 0.5;">
+        
+                              <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+                                   <!-- top overlay -->
+                                  <div class="mb-auto bd-highlight "  style="width: 100%;">
+                                    <div class="d-flex bd-highlight p-2">
+                                      <div class=" bd-highlight me-auto pe-2 ps-1">
+                                        <span class="badge bg-warning ">Features</span>
+                                      </div>    
+    
+                                      <div class=" bd-highlight ms-3">
+                                        <span class="badge bg-primary ">Sales</span>
+                                        <span class="badge bg-danger ">New Offer</span>
+                                      </div>
+    
+                                      
+                                    </div>
+                                  </div>                         
+                               
+                                  <div class="mt-auto p-1">
+                                          <!-- <div class="d-flex flex-column bd-highlight " > -->
+                                            <div class="d-flex">
+                                             
+                                          
+    
+    
+    
+                                              <div class=" bd-highlight me-auto pe-2 ps-1">
+                                                <span class="text-white">
+                                                  <i class="fa-solid fa-location-dot fa-sm"></i>
+                                                  <a class="text-decoration-none text-white" href="#">Greenville</a> ,
+                                                  <a class="text-white text-decoration-none">Jersey City</a>
+                                                </span>
+                                              </div>    
+    
+                                              <div class=" bd-highlight ms-3">
+                                                <span class=" text-white ">
+                                                    <i class="fas fa-video mx-2 fa-sm"></i>
+                                                    <i class="fas fa-camera mx-1 fa-sm"></i>7</span>
+                                            
+                                              </div>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                  </div>
+                              </div>        
+                           </div>
+                 
+      
+                            <div class="card-body fs-6">
+        
+                                <h5 class="text-start">Luxury House in Greenville</h5>
+        
+        
+                                <div class="text-primary text-start mt-1 fs-5">from <span>$</span> 86,000</div>
+        
+                                <p class="fw-light mt-1 text-start">This property is mostly wooded and sits high on a hilltop
+                                    overlooking
+                                    the Mohawk River Val <a href="#" class="link text-decoration-none">...</a></p>
+        
+                                <div class="text-start ">
+                                    <i class="fa-solid fa-bed text-dark  pe-2"></i>5
+                                    <i class="fa-solid fa-bath text-dark ms-4 pe-2"></i>1
+                                    <i class="fa-solid fa-maximize ms-4 pe-2"></i> 190 ft2
+                                </div>
+        
+                                <hr class="text-dark opacity-20">
+        
+                                <div class="d-flex ">
+                                    <div class="me-auto fw-lighter " style="font-size: 12px;">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                            height:35px">
+                                        <span class="pt-1">John</span>
+                                    </div>
+        
+                                    <div class="py-2 ps-2">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-plus"></i></i></button>
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 d-flex justify-content-center"> 
+                <a class="btn btn-light my-auto  " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                  <i class="fa fa-arrow-right text-primary"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+     
+
+
+    <div class="container-fluid px-0" style="background-color: rgba(203, 236, 247, 0.226);">
+        
+        
+        <div class="container " style=" width: 600px;  padding-top:100px">
+            <h2 class="fw-bolder" style="text-align:center ;"> Featured properties </h2>
+            <p style="text-align:center ; margin-top:15px">
+                
+                Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present.
+            </p>
+
+        </div>
+
+
+        <div class="container pb-5">
+            <div class="row row-cols-2  p-4" >
+                <div class="col p-5  pe-3 "  >
+                    <div class="card mb-3 rounded-0" style=" height: 300px; box-shadow: 0px 2px 30px lightblue !important;">
+                        <div class="row g-10">
+                            <div class="col px-0 bg-image hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                                <img src="images/house1.jpg" class="card-img rounded-0 " alt="..." height="300px" width="200px">
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                  </a>
+                                <div class="card-img-overlay " style="width:200px">
+                                    <div class="d-flex flex-column bd-highlight h-100" style="width:200px">
+                                        <!-- top overlay -->
+                                        <div class="ps-1 bd-highlight ms-auto"><span class="badge bg-danger ">New
+                                                Offer</span></div>
+    
+                                        <div class="mt-auto bd-highlight">
+                                            <div class="d-flex bd-highlight ">
+                                                <div class=" bd-highlight mt-auto">
+                                                    <img class="rounded-circle " alt="profile image" src="images/user.png"
+                                                        style="width:35px;
+                                        height:35px">
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col px-0 ">
+                                <div class="card-body">
+                                    <h5 class="text-start">Villa on Washington Avenue</h5>
+    
+    
+                                    <div class="text-warning text-start mt-1  fw-bold " style="opacity: 0.7;"><span>$</span>
+                                        150,000</div>
+    
+                                    <p class="fw-light mt-1 text-start" style="max-width: 25ch;">Beautiful, updated, ground
+                                        level Co-op apartment in the desirable Bay <a href="#"
+                                            class="link text-decoration-none">...</a></p>
+    
+                                    <div class="py-2 ps-2" style="opacity: 0.3;">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+    
+                            <hr class="text-dark opacity-20 mt-4 mb-1">
+                            <div class="fs-7 fw-lighter" >
+                                <i class="fa-solid fa-bed text-dark  pe-1"></i>5
+                                <i class="fa-solid fa-bath text-dark ms-2 pe-1"></i>1
+                                <i class="fa-solid fa-maximize ms-2 pe-1"></i> 190 ft2
+                            </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    
+                
+                
+                <div class="col p-5  ps-2 ">
+                    <div class="card mb-3 rounded-0" style=" height: 300px; box-shadow: 0px 2px 30px lightblue !important;">
+                        <div class="row g-10">
+                            <div class="col px-0 bg-image hover-overlay hover-zoom ripple shadow-1-strong rounded">
+                                <img src="images/house1.jpg" class="card-img rounded-0 " alt="..." height="300px" width="200px">
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                  </a>
+                                <div class="card-img-overlay " style="width:200px">
+                                    <div class="d-flex flex-column bd-highlight h-100" style="width:200px">
+                                        <!-- top overlay -->
+                                        <div class="ps-1 bd-highlight ms-auto"><span class="badge bg-danger ">New
+                                                Offer</span></div>
+    
+                                        <div class="mt-auto bd-highlight">
+                                            <div class="d-flex bd-highlight ">
+                                                <div class=" bd-highlight mt-auto">
+                                                    <img class="rounded-circle " alt="profile image" src="images/user.png"
+                                                        style="width:35px;
+                                        height:35px">
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col px-0">
+                                <div class="card-body">
+                                    <h5 class="text-start">Villa on Washington Avenue</h5>
+    
+    
+                                    <div class="text-warning text-start mt-1  fw-bold " style="opacity: 0.7;"><span>$</span>
+                                        150,000</div>
+    
+                                    <p class="fw-light mt-1 text-start" style="max-width: 25ch;">Beautiful, updated, ground
+                                        level Co-op apartment in the desirable Bay <a href="#"
+                                            class="link text-decoration-none">...</a></p>
+    
+                                    <div class="py-2 ps-2" style="opacity: 0.3;">
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-share-nodes"></i></button>
+                                        
+                                        <button type="button" class="btn btn-outline-dark me-1 rounded-0 p-0"
+                                            style="border-color: #21252930; height:30px; width:30px"><i
+                                                class="fa-solid fa-heart"></i></button>
+                                    </div>
+    
+                            <hr class="text-dark opacity-20 mt-4 mb-1">
+                            <div class="fs-7 fw-lighter" >
+                                <i class="fa-solid fa-bed text-dark  pe-1"></i>5
+                                <i class="fa-solid fa-bath text-dark ms-2 pe-1"></i>1
+                                <i class="fa-solid fa-maximize ms-2 pe-1"></i> 190 ft2
+                            </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    
+    
+    
+    
+    
+                
+            </div>
+        </div>
+
+
+        <!-- image_grid -->
+      
+        <div class="container-fluid">
+            <div class="row px-0 gx-0 border border-white  border-1">
+                <div class="col-6 px-0 bg-image hover-zoom ">
+                    <div class="card text-white  px-0 py-0 m-0 border-0 ">
+                        <img src="images/carousel_img_7.jpg" class="card-img h-100 p-1" alt="...">
+                       
+                        <div class="card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto ms-5   p-3  rounded-1 pb-5" style=" background-color:white ">
+                                <div class="text-warning text-start mt-1  fw-bolder " style="opacity: 0.7;"><span>$</span>
+                                    150,000</div>
+                                <h4 class="card-title text-dark fw-bolder" style="max-width: 15ch;">Gorgeous Home for Sale in Jersey</h4>
+                                
+                                <pre class=" text-dark card-text">5 BD  6 BA  190 ft<sup>2</sup> </pre>
+                                <p class="fw-lighter mt-1 text-start text-dark" style="max-width: 38ch; font-size:x-small">This property is mostly wooded and sits high on a hilltop overlooking the Mohawk River Valley. Located right in the heart of Upsta <a href="#"
+                                        class="link text-decoration-none">...</a></p>
+                                <a href="#" class="text-decoration-none " style="font-size:small; color:black;">Discover more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 px-0">
+                    <div class="row  px-0 gx-0 ">
+                        <div class="col-6  px-0  bg-image hover-overlay ripple shadow-1-strong rounded">
+                            <img src="images/carousel_img_1.jpg" class="card-img h-100 p-1" alt="...">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.3)"></div>
+                              </a>
+                        </div>
+                        <div class="col-6  px-0 bg-image hover-overlay ripple shadow-1-strong rounded">
+                            <img src="images/carousel_img_4.jpg" class="card-img h-100 p-1" alt="...">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.3)"></div>
+                              </a>
+                        </div>
+                        <div class="col-6  px-0  bg-image hover-overlay ripple shadow-1-strong rounded">
+                            <img src="images/carousel_img_3.jpg" class="card-img h-100 p-1" alt="...">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.3)"></div>
+                              </a>
+        
+                        </div>
+                        <div class="col-6  px-0 bg-image hover-overlay ripple shadow-1-strong rounded">
+                            <img src="images/carousel_img_2.jpg" class="card-img h-100 p-1" alt="...">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.3)"></div>
+                              </a>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container " style=" width: 600px;  padding-top:100px">
+            <h2 class="fw-bolder" style="text-align:center ;"> Properties by area </h2>
+            <p style="text-align:center ; margin-top:15px">
+                
+                
+                Highlight the best of your properties by using the List Category shortcode. You can list categories, types, cities, areas and states of your choice.
+            </p>
+
+        </div>
+
+
+        <div class="container " style="padding-right: 160px; padding-left: 160px; padding-top:100px; padding-bottom:100px;">
+
+            <div class="row g-2 g-lg-2">
+    
+                <div class=" col-8">
+                    <div class="card bg-dark text-white  px-0 py-0 m-0 border-0 h-100 bg-image hover-zoom">
+                        <img src="images/newyork.jpg " class="card-img border-0 h-100" alt="newyork" style="height: 100%;">
+                       
+                        <div class="card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto p-3  rounded-1 pb-5 text-center">
+                                <h4 class="  fs-6  card-title fw-bold" style="max-width: 15ch;">Queens  </h4>
+                                <p class="  fs-6  fw-lighter card-text">Friendly neighborhood</p>
+                                <button type="button" class="fw-lighter  fs-6 btn btn-primary text-white  py-0 px-1 rounded-0 ">4
+                                    Listings</button>
+    
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class=" col-4">
+                    <div class="card bg-dark text-white  px-0 py-0 m-0 border-0 bg-image hover-zoom">
+                        <img src="images/house3.jpg" class="card-img border-0" alt="..." ">
+                      
+                        <div class=" card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto p-3  rounded-1 pb-5 text-center">
+                                <h4 class="card-title fw-bold  fs-6 " style="max-width: 15ch;">New York </h4>
+                                <p class="  fs-6  fw-lighter card-text">The big apple</p>
+                                <button type="button" class="btn btn-primary text-white  py-0 px-1 rounded-0 ">4
+                                    istings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class=" row row-cols-1 row-cols-lg-3 g-2 g-lg-2 pt-2">
+                <div class="col">
+                    <div class="card bg-dark text-white  px-0 py-0 m-0 border-0 bg-image hover-zoom">
+                        <img src="images/house3.jpg" class="card-img border-0" alt="..." ">
+                        
+                        <div class=" card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto p-3  rounded-1 pb-5 text-center">
+                                <h4 class="card-title fw-bold  fs-6" style="max-width: 15ch;">New York </h4>
+                                <p class=" fs-6  fw-lighter  card-text">The big apple</p>
+                                <button type="button" class="btn btn-primary text-white  py-0 px-1 rounded-0 ">4
+                                    istings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col h-100">
+                    <div class="card bg-dark text-white  px-0 py-0 m-0 border-0 bg-image hover-zoom">
+                        <img src="images/house3.jpg" class="card-img border-0" alt="..." ">
+                        
+                        <div class=" card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto p-3  rounded-1 pb-5 text-center">
+                                <h4 class="card-title fw-bold  fs-6" style="max-width: 15ch;">New York </h4>
+                                <p class=" fs-6  fw-lighter  card-text">The big apple</p>
+                                <button type="button" class="btn btn-primary text-white  py-0 px-1 rounded-0 ">4
+                                    istings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col ">
+                    <div class="card bg-dark text-white  px-0 py-0 m-0 border-0 bg-image hover-zoom">
+                        <img src="images/house3.jpg" class="card-img border-0" alt="..." ">
+                       
+                        <div class=" card-img-overlay d-flex d-column justify-content-center p-0">
+                            <div class="mt-auto p-3  rounded-1 pb-5 text-center">
+                                <h4 class="card-title fw-bold  fs-6" style="max-width: 15ch;">New York </h4>
+                                <p class=" fs-6  fw-lighter  card-text">The big apple</p>
+                                <button type="button" class="btn btn-primary text-white  py-0 px-1 rounded-0 ">4
+                                    istings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+    
+    
+        </div>
+     
+    </div>
+
+    <div class="container " style=" width: 600px;
+    height: 150px; margin-top:100px">
+        <h2 class="fw-bolder" style="text-align:center ;">   Best off-plan projects</h2>
+        <p style="text-align:center ; margin-top:15px">
+          
+If you have properties for sale based on their plans, showcase them in your homepage to attract investors.
+        </p>
+
+    </div>
+
+
+    <div class="container-fluid">
+        <!-- Nav tabs -->
+
+        <hr  class="dropdown-devider">
+
+       <div class="d-flex justify-content-center">
+        <ul class="  nav nav-tabs justify-content-center padding-0" id="myTab" role="tablist">
+            <li class="nav-item  px-3" role="presentation">
+                <button class="nav-link active  border-0 border-bottom pb-3  nav-project"  id="apartment1-tab" data-bs-toggle="tab" data-bs-target="#apartment1" type="button"
+                    role="tab" aria-controls="apartment1" aria-selected="true"><i class="fa-solid fa-building text-warning pe-2"></i>Studio Apartment</button>
+            </li>
+            <li class="nav-item px-3 " role="presentation">
+                <button class="nav-link  nav-project border-0   border-bottom pb-3 " id="apartment2-tab" data-bs-toggle="tab" data-bs-target="#apartment2" type="button"
+                    role="tab" aria-controls="apartment2" aria-selected="false"><i class="fa-solid fa-building text-warning pe-2"></i>Apartment Class B</button>
+            </li>
+            <li class="nav-item px-3" role="presentation">
+                <button class="nav-link nav-project border-0  border-bottom pb-3 " id="apartment3-tab" data-bs-toggle="tab" data-bs-target="#apartment3" type="button"
+                    role="tab" aria-controls="apartment3" aria-selected="false"><i class="fa-solid fa-building text-warning pe-2"></i>Apartment Class C</button>
+            </li>
+            <li class="nav-item px-3" role="presentation">
+                <button class="nav-link nav-project border-0   border-bottom pb-3 " id="apartment4-tab" data-bs-toggle="tab" data-bs-target="#apartment4" type="button"
+                    role="tab" aria-controls="apartment4" aria-selected="false"><i class="fa-solid fa-building text-warning pe-2"></i>Penthouse</button>
+            </li>
+        </ul>
+       </div>
+
+        <hr  class="dropdown-devider m-0">
+        <!-- Tab panes -->
+        <div class="container px-5 tab-content border-0 " >
+            <div class="tab-pane active"  id="apartment1" role="tabpanel" aria-labelledby="apartment1-tab">
+                <div class="row  " style=" padding-top:50px">
+                    <div class="col " style=" padding-left:80px" >
+                        
+                            <h1 class=" text-start text-md-left mb-3">   Studio Apartment</h1>
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                             
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare suscipit consectetur.Fusce non mauris ex. Donec semper, odio vitae lobortis faucibus, magna sem dapibus quam.
+                            </p>
+
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                                Pellentesque eu fermentum quam, a congue purus. Vivamus a aliquet justo. Aliquam rhoncus suscipit nulla sit amet molestie. Phasellus vitae dictum ex. Aenean molestie orci sed sapien mollis commodo.
+
+                            </p>
+
+                            <pre>
+Floor: 1st
+Bedrooms: 3
+Bathroom: 1
+Size 8,997 Sqft
+                            </pre>
+                            
+                    
+                            <button type="button" class="btn btn-primary text-white d-block   "
+                            style=" margin-bottom:150px;">see project</button>
+                    </div>
+
+                    <div class="col "  style=" margin-left:80px" >
+                       <img class="img"src="images/perspective-1.jpg" alt="perspective" height="467px" width="532px">
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="apartment2" role="tabpanel" aria-labelledby="apartment2-tab">
+                <div class="row  " style=" padding-top:50px">
+                    <div class="col " style=" padding-left:80px" >
+                        
+                            <h1 class=" text-start text-md-left mb-3">   Studio Apartment</h1>
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                             
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare suscipit consectetur.Fusce non mauris ex. Donec semper, odio vitae lobortis faucibus, magna sem dapibus quam.
+                            </p>
+
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                                Pellentesque eu fermentum quam, a congue purus. Vivamus a aliquet justo. Aliquam rhoncus suscipit nulla sit amet molestie. Phasellus vitae dictum ex. Aenean molestie orci sed sapien mollis commodo.
+
+                            </p>
+
+                            <pre>
+Floor: 1st
+Bedrooms: 3
+Bathroom: 1
+Size 8,997 Sqft
+                            </pre>
+                            <button type="button" class="btn btn-primary text-white d-block   "
+                            style=" margin-bottom:150px;">see project</button>
+                  
+                    </div>
+
+                    <div class="col "  style=" margin-left:80px" >
+                       <img class="img"src="images/perspective-2.jpg" alt="perspective" height="467px" width="532px">
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="apartment3" role="tabpanel" aria-labelledby="apartment3-tab">
+                <div class="row  " style=" padding-top:50px">
+                    <div class="col " style=" padding-left:80px" >
+                        
+                            <h1 class=" text-start text-md-left mb-3">   Studio Apartment</h1>
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                             
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare suscipit consectetur.Fusce non mauris ex. Donec semper, odio vitae lobortis faucibus, magna sem dapibus quam.
+                            </p>
+
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                                Pellentesque eu fermentum quam, a congue purus. Vivamus a aliquet justo. Aliquam rhoncus suscipit nulla sit amet molestie. Phasellus vitae dictum ex. Aenean molestie orci sed sapien mollis commodo.
+
+                            </p>
+
+                            <pre>
+Floor: 1st
+Bedrooms: 3
+Bathroom: 1
+Size 8,997 Sqft
+                            </pre>
+                              
+                            <button type="button" class="btn btn-primary text-white d-block   "
+                            style=" margin-bottom:150px;">see project</button>
+                  
+                    </div>
+
+                    <div class="col "  style=" margin-left:80px" >
+                       <img class="img"src="images/perspective-3.jpg" alt="perspective" height="467px" width="532px">
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="apartment4" role="tabpanel" aria-labelledby="apartment4-tab">
+                <div class="row  " style=" padding-top:50px">
+                    <div class="col " style=" padding-left:80px" >
+                        
+                            <h1 class=" text-start text-md-left mb-3">   Studio Apartment</h1>
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                             
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare suscipit consectetur.Fusce non mauris ex. Donec semper, odio vitae lobortis faucibus, magna sem dapibus quam.
+                            </p>
+
+                            <p style="text-align:justify ; margin-top:15px" class="lh-md ">
+                                Pellentesque eu fermentum quam, a congue purus. Vivamus a aliquet justo. Aliquam rhoncus suscipit nulla sit amet molestie. Phasellus vitae dictum ex. Aenean molestie orci sed sapien mollis commodo.
+
+                            </p>
+
+                            <pre>
+Floor: 1st
+Bedrooms: 3
+Bathroom: 1
+Size 8,997 Sqft
+                            </pre>
+                            
+                            <button type="button" class="btn btn-primary text-white d-block   "
+                            style=" margin-bottom:150px;">see project</button>
+                
+                    </div>
+
+                    <div class="col "  style=" margin-left:80px" >
+                       <img class="img"src="images/perspective-4.jpg" alt="perspective" height="467px" width="532px">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+
+
+    
+    <div class="container " style=" width: 600px;
+    height: 150px; margin-top:100px">
+        <h2 class="fw-bolder" style="text-align:center ;">   Developers </h2>
+        <p style="text-align:center ; margin-top:15px">
+          
+            If you have properties for sale based on their plans, showcase them in your homepage to attract investors.
+        </p>
+
+    </div>
+    
+
+    <!-- carousel 4th-->
+    <div class="container text-center my-5 bg-white">
+        
+
+        <div class="row mx-auto my-auto justify-content-center">
+            <div class="col-1 d-flex justify-content-center">
+                <a class="btn btn-light my-auto " href="#recipeCarousel" role="button" data-slide="prev">
+                  <i class="fa fa-arrow-left text-primary"></i>
+                </a>
+              </div>
+
+                    <div class="col-8 my-auto ">
+                        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner  " >
+                                <div class="carousel-item  active">
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="card p-4 border-0">
+                                            <div class="card-img">
+                                                <img src="images/brand_co1.png" class="img-fluid">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card p-4 border-0">
+                                            <div class="card-img">
+                                                <img src="images/brand_co2.png" class="img-fluid">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card p-4 border-0">
+                                            <div class="card-img">
+                                                <img src="images/brand_co3.png" class="img-fluid">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card p-4 border-0">
+                                            <div class="card-img">
+                                                <img src="images/brand_co1.png" class="img-fluid">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-item  ">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co1.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co2.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co3.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co1.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="carousel-item  ">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co1.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co2.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co3.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card p-4 border-0">
+                                                <div class="card-img">
+                                                    <img src="images/brand_co1.png" class="img-fluid">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                    
+                    <div class="col-1 d-flex justify-content-center"> 
+                        <a class="btn btn-light my-auto  " href="#recipeCarousel" role="button" data-slide="next">
+                          <i class="fa fa-arrow-right text-primary"></i>
+                        </a>
+                      </div>
+
+                </div>
+       
+    </div>
+
+
+   
+
+
+
+
+    <div class="container-fluid" style="background-color: rgba(203, 236, 247, 0.226); height:550px" >
+        <div class="container " style=" width: 600px;  padding-top:100px; padding-bottom:70px">
+            <h2 class="fw-bolder" style="text-align:center ;">  Testimonials </h2>
+            <p style="max-width: 65ch; text-align:center ; margin-top:15px; " class="mx-auto">
+              
+                
+                Publish the best of your client testimonials and let the world know what a great agent or real estate agency you are. Testimonials build trust.
+            </p>
+
+        </div>
+
+
+    
+        <div class="container">
+            <div class=" row justify-content-center">
+                <div class="col-4">
+                    <div class="card py-4" style="width: 320px;">
+                        <div class="card-body">
+                            <h5 class="card-title mx-3" >
+                                <div class="p-2 row ">
+                                    <div class="col-2">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+
+                                    </div>
+                                    <div class="col-10" style="font-size: 14px;">
+                                        <div>John Collins</div>
+                                        <div class="fw-lighter fs-6">developer</div>
+                                    </div>
+                                </div>
+                            </h5>
+                            <div class="card-text px-4" style="line-height: 1.42em; font-size: 14px;">
+                                <p>I reviewed and purchased a number of different WordPress Themes before settling on Wp
+                                    Residence.</p>
+                                <div>
+                                    <span style="color:orange">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card py-4">
+                        <div class="card-body">
+                            <h5 class="card-title mx-3" >
+                                <div class="p-2 row ">
+                                    <div class="col-2">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+
+                                    </div>
+                                    <div class="col-10" style="font-size: 14px;">
+                                        <div>John Collins</div>
+                                        <div class="fw-lighter fs-6">developer</div>
+                                    </div>
+                                </div>
+                            </h5>
+                            <div class="card-text px-4" style="line-height: 1.42em; font-size: 14px;">
+                                <p>I reviewed and purchased a number of different WordPress Themes before settling on Wp
+                                    Residence.</p>
+                                <div>
+                                    <span style="color:orange">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card py-4">
+                        <div class="card-body">
+                            <h5 class="card-title mx-3" >
+                                <div class="p-2 row ">
+                                    <div class="col-2">
+                                        <img class="rounded-circle me-1" alt="profile image" src="images/user.png" style="width:35px;
+                                    height:35px">
+
+                                    </div>
+                                    <div class="col-10" style="font-size: 14px;">
+                                        <div>John Collins</div>
+                                        <div class="fw-lighter fs-6">developer</div>
+                                    </div>
+                                </div>
+                            </h5>
+                            <div class="card-text px-4" style="line-height: 1.42em; font-size: 14px;">
+                                <p>I reviewed and purchased a number of different WordPress Themes before settling on Wp
+                                    Residence.</p>
+                                <div>
+                                    <span style="color:orange">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="container-fluid pb-5" style="background-color: white">
+        <div class="container " style=" width: 600px;  padding-top:100px;  padding-bottom:70px">
+            <h2 class="fw-bolder" style="text-align:center ;"> Our agents at your service </h2>
+            <p style="max-width: 65ch; text-align:center ; margin-top:15px; " class="mx-auto">
+              
+                
+                With the “list agents shortcode” you can show your agents in any page, alognside with their contact details and link to their agent profile.
+            </p>
+
+        </div>
+        
+
+        <div class="container">
+            <div class=" row justify-content-center">
+                <div class="col-4 hover-overlay hover-zoom ripple shadow-1-strong rounded" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                    <div class="card  " style="max-width: 100%;">
+    
+                        <!-- Image -->
+                        <div class=" bg-image "
+                            data-mdb-ripple-color="light">
+                            <img class="card-img-top " src="images/person1.jpg" alt="Photo of person">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                            </a>
+                        </div>
+    
+                        <!-- Text Overlay -->
+    
+                        <div class="card-img-overlay p-0" style=" height:225px; ">
+    
+                            <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+    
+    
+                                <div class="mt-auto p-1">
+                                    <span class="badge bg-warning">4 Listings </span>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="card-body fs-6">
+    
+                            <h5 class="text-start mb-0">Mike Rutter</h5>
+    
+    
+                            <div style="font-size: 14px;" class="text-secondary opacity-20"> buying agent</div>
+    
+                            <p class="fw-light mt-3 text-start " class="text-secondary opacity-20">
+    
+                                Whether it is working with a first time homebuyer, a luxury home listing or a seasoned inv
+                                <a href="#" class="link text-decoration-none">...</a></p>
+    
+    
+                            <div class="d-flex">
+                                <div>
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fab fa-facebook-f px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fab fa-twitter px-2 text-secondary"></i></i>
+                                            <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                    class="fab fa-youtube px-2 text-secondary"></i></i>
+                                                <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                        class="fab fa-instagram px-2 text-secondary"></i></i>
+                                                    <button type="button" class="btn btn-light btn-circle "><i
+                                                            class="fab fa-foursquare px-2 text-secondary"></i></i>
+                                                    </button>
+                                </div>
+                                <div class="ms-auto">
+    
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fa-solid fa-envelope px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fa-solid fa-phone-flip px-2 text-secondary"></i></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="col-4 hover-overlay hover-zoom ripple shadow-1-strong rounded" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                    <div class="card  " style="max-width: 100%;">
+    
+                        <!-- Image -->
+                        <div class=" bg-image "
+                            data-mdb-ripple-color="light">
+                            <img class="card-img-top " src="images/person2.png" alt="Photo of person">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                            </a>
+                        </div>
+    
+                        <!-- Text Overlay -->
+    
+                        <div class="card-img-overlay p-0" style=" height:225px; ">
+    
+                            <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+    
+    
+                                <div class="mt-auto p-1">
+                                    <span class="badge bg-warning">4 Listings </span>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="card-body fs-6">
+    
+                            <h5 class="text-start mb-0">Mike Rutter</h5>
+    
+    
+                            <div style="font-size: 14px;" class="text-secondary opacity-20"> buying agent</div>
+    
+                            <p class="fw-light mt-3 text-start " class="text-secondary opacity-20">
+    
+                                Whether it is working with a first time homebuyer, a luxury home listing or a seasoned inv
+                                <a href="#" class="link text-decoration-none">...</a></p>
+    
+    
+                            <div class="d-flex">
+                                <div>
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fab fa-facebook-f px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fab fa-twitter px-2 text-secondary"></i></i>
+                                            <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                    class="fab fa-youtube px-2 text-secondary"></i></i>
+                                                <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                        class="fab fa-instagram px-2 text-secondary"></i></i>
+                                                    <button type="button" class="btn btn-light btn-circle "><i
+                                                            class="fab fa-foursquare px-2 text-secondary"></i></i>
+                                                    </button>
+                                </div>
+                                <div class="ms-auto">
+    
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fa-solid fa-envelope px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fa-solid fa-phone-flip px-2 text-secondary"></i></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="col-4" style="box-shadow: 0px 2px 30px rgba(173, 216, 230, 0.479)">
+                    <div class="card hover-overlay hover-zoom ripple shadow-1-strong rounded " style="max-width: 100%;">
+    
+                        <!-- Image -->
+                        <div class=" bg-image "
+                            data-mdb-ripple-color="light">
+                            <img class="card-img-top " src="images/person3.png" alt="Photo of person">
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                            </a>
+                        </div>
+    
+                        <!-- Text Overlay -->
+    
+                        <div class="card-img-overlay p-0" style=" height:225px; ">
+    
+                            <div class="d-flex align-items-start flex-column mb-3 text-white " style="height: 100%;">
+    
+    
+                                <div class="mt-auto p-1">
+                                    <span class="badge bg-warning">4 Listings </span>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="card-body fs-6">
+    
+                            <h5 class="text-start mb-0">Mike Rutter</h5>
+    
+    
+                            <div style="font-size: 14px;" class="text-secondary opacity-20"> buying agent</div>
+    
+                            <p class="fw-light mt-3 text-start " class="text-secondary opacity-20">
+    
+                                Whether it is working with a first time homebuyer, a luxury home listing or a seasoned inv
+                                <a href="#" class="link text-decoration-none">...</a></p>
+    
+    
+                            <div class="d-flex">
+                                <div>
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fab fa-facebook-f px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fab fa-twitter px-2 text-secondary"></i></i>
+                                            <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                    class="fab fa-youtube px-2 text-secondary"></i></i>
+                                                <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                        class="fab fa-instagram px-2 text-secondary"></i></i>
+                                                    <button type="button" class="btn btn-light btn-circle "><i
+                                                            class="fab fa-foursquare px-2 text-secondary"></i></i>
+                                                    </button>
+                                </div>
+                                <div class="ms-auto">
+    
+                                    <button type="button" class="btn btn-light btn-circle me-2"><i
+                                            class="fa-solid fa-envelope px-2 text-secondary"></i></i>
+                                        <button type="button" class="btn btn-light btn-circle me-2"><i
+                                                class="fa-solid fa-phone-flip px-2 text-secondary"></i></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    
+    </div>
+
+
+    <!--*************** footer ***************-->
+    <section class="conclusion" style="background-color: #002B54;">
+        <div class="container-fluid mt-5  text-white align-center  p-5" style="background-color: #002B54; font-size:14px;">
+            <h2 class="align-center mx-auto pt-3" style="max-width:40ch ; font-size:25px; vertical-align: baseline;">Contact us
+              today if you’d like to know more about how we help buy, sell or rent your home</h2>
+            <div class="bg-white p-4 w-50 mx-auto mt-5 rounded-3">
+        
+              <div class="container text-dark" style=" padding-bottom:20px;">
+                <h5 class="fw-bolder" style="text-align:center ;"> Schedule a meeting with our team
+                </h5>
+                <p style="max-width: 40ch; text-align:center ; margin-top:15px; " class="mx-auto">
+        
+        
+                  Our experts and developers would love to contribute their expertise and insights
+                </p>
+        
+              </div>
+        
+              <div class="input-group">
+                <input type="text" class="form-control me-2 rounded-3" placeholder="Name" style="background-color: #F3F2FB; color: #222222;"/>
+              
+                <input type="phone" class="form-control rounded-3" placeholder="Mobile" style="background-color: #F3F2FB; color: #222222;"/>
+              </div>
+        
+              <div class="input-group mt-2">
+                <input type="email" class="form-control me-2 rounded-3" placeholder="Email" style="background-color: #F3F2FB; color: #222222;"/>
+            
+                <input type="text" class="form-control rounded-3" placeholder="City" style="background-color: #F3F2FB; "/>
+              </div>
+        
+              <textarea class="form-control mt-2 rounded-3" id="Textarea" rows="3" placeholder="Message" style="background-color: #F3F2FB; "></textarea>
+              <button class="btn block bg-primary w-100 mt-2" type="submit" > Send Email</button>
+            </div>
+          </div>
+    </section>
+    
+    <footer class="footer">
+      <section class="footer-container" style="background-color: #001a33;">    
+        
+        <div class="container-fluid text-white py-5" style="height: 400px; background-color: #001a33; font-size:12px; ">
+          <div class="container py-4">
+  
+              <div class="row">
+                  <div class="col-6">
+                      <div>
+                          <h6>Contact us</h2>
+                      </div>
+                      <div>
+                          <i class="fa-solid fa-building pe-1"></i>
+                          <span>3755 Commercial St SE Salem, Corner with Sunny Boulevard, 3755 Commercial OR 97302</span>
+                      </div>
+  
+                      <div class="pt-2">
+                          <i class="fa-solid fa-phone-flip pe-1"></i>
+                          <span>(305) 555-4446</span>
+                      </div>
+                      <div class="pt-2">
+                          <i class="fa-solid fa-fax pe-1"></i>
+                          <span>(305) 555-4555</span>
+                      </div>
+                      <div class="pt-2">
+                          <i class="fa-solid fa-envelope pe-1"></i>
+                          <span>youremail@gmail.com</span>
+                      </div>
+                      <div class="pt-2">
+                          <i class="fa-brands fa-skype pe-1"></i>
+                          <span>youremail@gmail.com</span>
+                      </div>
+                      <div class="pt-2">
+                          <i class="fas fa-desktop pe-1"></i>
+                          <span>WP RESIDENCE</span>
+                      </div>
+  
+                      <div class="pt-4 ps-2">
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fas fa-rss px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-twitter px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-facebook-f px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-dribbble px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-google-plus-g px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-linkedin-in px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-tumblr px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-pinterest-p px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-youtube px-2 text-light"></i>
+                          </button>
+                          <button type="button" class="btn btn-secondary p-1 me-1"><i
+                                  class="fab fa-vimeo-v px-2 text-light"></i>
+                          </button>
+  
+                      </div>
+  
+                  </div>
+                  <div class="col-3">
+                      <h6>Lists by Category</h2>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Apartments</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Houses</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Industrial</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Land</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Offices</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Retail</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Villas</a>
+                              <span>(17)</span>
+                          </div>
+                          <div class="pt-2">
+                              <a href="#" class="text-decoration-none text-light">Condos</a>
+                              <span>(17)</span>
+                          </div>
+  
+  
+                  </div>
+                  <div class="col-3">
+                      <h6>Latest Properties</h2>
+                          <div class="row pt-2">
+                              <div class="col-5 pe-0">
+                                  <img src="images/house_nice.jpg" height=60px" weight="60px">
+                              </div>
+                              <div class="col-7 ps-0">
+                                  <div class="text-light opacity-50" style="max-width: 15ch;">Luxury House in Greenville
+                                  </div>
+                                  <div class="mt-1">
+                                      from $ 86,000
+                                  </div>
+  
+                              </div>
+                          </div>
+                          <div class="row pt-2">
+                              <div class="col-5 pe-0">
+                                  <img src="images/carousel_img_2.jpg" height=60px" weight="60px">
+                              </div>
+                              <div class="col-7 ps-0">
+                                  <div class="text-light opacity-50" style="max-width: 15ch;">Luxury House in Greenville
+                                  </div>
+                                  <div class="mt-1">
+                                      from $ 86,000
+                                  </div>
+  
+                              </div>
+                          </div>
+                          <div class="row pt-2">
+                              <div class="col-5 pe-0">
+                                  <img src="images/carousel_img_1.jpg" height=60px" weight="60px">
+                              </div>
+                              <div class="col-7 ps-0">
+                                  <div class="text-light opacity-50" style="max-width: 15ch;">Luxury House in Greenville
+                                  </div>
+                                  <div class="mt-1">
+                                      from $ 86,000
+                                  </div>
+  
+                              </div>
+                          </div>
+                  </div>
+              </div>
+  
+              <div class="row mt-5">
+                  <div class="col-8 text-light">
+                      Copyright WP Estate. All Rights Reserved.
+  
+                  </div>
+                  <div class="col-4 ">
+  
+                      <ul class="list-inline ">
+                          <li class="list-inline-item me-4">
+                              <a class="list-inline-link active text-light text-decoration-none" aria-current="page" href="#">Documentation</a>
+                          </li>
+                          <li class="list-inline-item me-4">
+                              <a class="list-inline-link text-light text-decoration-none" href="#">Video Tutorial </a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a class="list-inline-link text-light text-decoration-none" href="#">Client Support</a>
+                          </li>
+                      </ul>
+  
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+        
+      </section>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  
+    <script>
+      gsap.set('section.footer-container', { yPercent: -75 })
+
+const uncover = gsap.timeline({ paused:true })
+
+uncover
+.to('section.footer-container', { yPercent: 0, ease: 'none' })
+;
+
+ScrollTrigger.create({  
+  trigger: 'section.conclusion',
+  start: 'bottom bottom',
+  end: '+=75%',
+  animation: uncover,
+  scrub: true,  
+})
+    </script>
+  
+
+    <!-- *************** end of footer *************** -->
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".sticky-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
+
+
+        var slider = document.getElementById("customRange1");
+        var output = document.getElementById("end_range");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+
+        /*function item_clicked(item) {
+            
+            document.getElementById("dropdownMenu1").innerHTML = item.innerHTML;
+        }*/
+
+
+    </script>
+</body>
+
+
+</html>
